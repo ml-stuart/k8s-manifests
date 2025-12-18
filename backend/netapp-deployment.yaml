@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: netapp
-        image: my-dotnet-api:3.0
+        image: my-dotnet-api:4.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
