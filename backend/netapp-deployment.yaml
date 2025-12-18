@@ -61,6 +61,17 @@ spec:
               key: Password
         - name: ConnectionStrings__DefaultConnection
           value: "Host=$(DB_HOST);Port=$(DB_PORT);Database=$(DB_NAME);Username=$(DB_USER);Password=$(DB_PASSWORD)"
+        # 對應到 C# 中的 _configuration["FileStoragePath"]
+        - name: FileStoragePath
+              value: "/mnt/data/uploads"
+        # 將 PVC 掛載到容器內部路徑
+          volumeMounts:
+            - name: file-storage-volume
+              mountPath: "/mnt/data/uploads"
+      volumes:
+        - name: file-storage-volume
+          persistentVolumeClaim:
+            claimName: file-storage-pvc
 ---
 apiVersion: v1
 kind: Service
