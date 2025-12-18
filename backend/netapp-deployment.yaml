@@ -65,9 +65,9 @@ spec:
         - name: FileStoragePath
           value: "/mnt/data/uploads"
         # 將 PVC 掛載到容器內部路徑
-          volumeMounts:
-            - name: file-storage-volume
-              mountPath: "/mnt/data/uploads"
+        volumeMounts:
+          - name: file-storage-volume
+            mountPath: "/mnt/data/uploads"
       volumes:
         - name: file-storage-volume
           persistentVolumeClaim:
