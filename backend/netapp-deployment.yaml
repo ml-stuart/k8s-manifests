@@ -31,6 +31,9 @@ spec:
             memory: "512Mi"
             cpu: "500m"
         env:
+        # ---指定測試/正式環境---
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
         # === ConfigMap ===
         - name: DB_HOST
           valueFrom:
