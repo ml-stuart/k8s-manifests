@@ -23,13 +23,6 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
-        resources:
-          requests:
-            memory: 256Mi
-            cpu: 200m
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
         env:
         # ---指定測試/正式環境---
         - name: ASPNETCORE_ENVIRONMENT
